@@ -1,3 +1,5 @@
+'use strict';
+
 function getAnimalSound(animal) {
     if (animal === undefined) 
     		return null;
@@ -9,7 +11,7 @@ function getAverageMark(marks) {
 	if (marks.length === 0)
 		return 0;
 	let sumMarks = 0;
-	for (i=0; i< marks.length; i++) {
+	for (let i=0; i< marks.length; i++) {
 		let mark = Number(marks[i]);
 		sumMarks += mark;
 	}
