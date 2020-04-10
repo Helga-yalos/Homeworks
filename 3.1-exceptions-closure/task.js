@@ -3,17 +3,16 @@
 //task 1
 function parseCount(someString) {
 	let parseResult = Number.parseInt(someString, 10);
-	if (isNaN(parseResult)) {
-		const parseError = new Error ("Невалидное значение");
-		return parseError;
-	} else 
+	if (isNaN(parseResult)) 
+		throw new Error ("Невалидное значение");
+	 else 
 	return parseResult;
 }
 function validateCount(someValue) {
 	try { 
 		return parseCount(someValue);
 	} catch(e) {
-		 throw e;
+		 return e;
 	}
 }
 
@@ -41,19 +40,17 @@ class Triangle {
 
 class FakeTriangle {
 	getPerimeter() {
-		throw new Error("Ошибка! Неправильный треугольник");
+		return "Ошибка! Неправильный треугольник";
 	}
 	getArea() {
-		throw new Error("Ошибка! Неправильный треугольник");
+		return "Ошибка! Неправильный треугольник";
 	}
 }
 
  function getTriangle(a,b,c) {
  	try { 
-     	const triangle = new Triangle(a,b,c);
-		  return triangle;
+		return new Triangle(a,b,c);
  	}catch(e){ 
- 		const triangle = new FakeTriangle();
-          return triangle;  
+ 		return new FakeTriangle();
     }
  }
